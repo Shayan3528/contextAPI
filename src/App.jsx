@@ -1,25 +1,14 @@
-import Heading from "./Component/Heading";
-import Section from "./Component/Section";
+import AllPosts from "./Component/AllPosts.jsx";
+import Heading from "./Component/Heading.jsx";
+import Post from "./Component/Post.jsx";
+import Section from "./Component/Section.jsx";
 
-export default function Page() {
+export default function ProfilePage() {
   return (
     <Section>
-      <Heading>Title</Heading>
-      <Section>
-        <Heading>Heading</Heading>
-        <Heading>Heading</Heading>
-        <Heading>Heading</Heading>
-        <Section>
-          <Heading>Sub-heading</Heading>
-          <Heading>Sub-heading</Heading>
-          <Heading>Sub-heading</Heading>
-          <Section>
-            <Heading>Sub-sub-heading</Heading>
-            <Heading>Sub-sub-heading</Heading>
-            <Heading>Sub-sub-heading</Heading>
-          </Section>
-        </Section>
-      </Section>
+      <Heading>My Profile</Heading>
+      <Post title="Hello traveller!" body="Read about my adventures." />
+      <AllPosts />
     </Section>
   );
 }
