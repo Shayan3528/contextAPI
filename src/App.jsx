@@ -1,14 +1,23 @@
-import AllPosts from "./Component/AllPosts.jsx";
-import Heading from "./Component/Heading.jsx";
-import Post from "./Component/Post.jsx";
-import Section from "./Component/Section.jsx";
-
-export default function ProfilePage() {
+import { useState } from "react";
+import List from "./Component/List.jsx";
+import { ImageSizeContext } from "./ContextAPi/LevelContext.js";
+export default function App() {
+  const [isLarge, setIsLarge] = useState(false);
+  const imageSize = isLarge ? 150 : 100;
   return (
-    <Section>
-      <Heading>My Profile</Heading>
-      <Post title="Hello traveller!" body="Read about my adventures." />
-      <AllPosts />
-    </Section>
+    <ImageSizeContext value={imageSize}>
+      <label>
+        <input
+          type="checkbox"
+          checked={isLarge}
+          onChange={(e) => {
+            setIsLarge(e.target.checked);
+          }}
+        />
+        Use large images
+      </label>
+      <hr />
+      <List />
+    </ImageSizeContext>
   );
 }
